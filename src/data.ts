@@ -7,10 +7,10 @@ import { PortfolioItem, ServiceItem, BusinessCardShowcaseItem, TestimonialItem, 
 
 // Paths to the high-quality assets generated
 export const IMAGE_ASSETS = {
-  webHero: '/src/assets/images/hero_web_mockup_1780225762485.png',
-  businessCard: '/src/assets/images/business_card_mockup_1780225777705.png',
-  invitation: '/src/assets/images/invitation_mockup_1780225791211.png',
-  greeting: '/src/assets/images/greeting_mockup_1780225806763.png',
+  webHero: 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=1000&q=80',
+  businessCard: 'https://images.unsplash.com/photo-1517524206127-48bbd363f3d7?auto=format&fit=crop&w=1000&q=80',
+  invitation: 'https://images.unsplash.com/photo-1546190255-451a91afc548?auto=format&fit=crop&w=1000&q=80',
+  greeting: 'https://images.unsplash.com/photo-1522836924445-4478bdeb860c?auto=format&fit=crop&w=1000&q=80',
   avatar1: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80',
   avatar2: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80',
   avatar3: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80',
@@ -235,14 +235,16 @@ export const BUSINESS_CARDS_SHOWCASE: BusinessCardShowcaseItem[] = [
     title: 'Photography Studio Card',
     role: 'Creative Photographer',
     description: 'Designed for high-fashion and organic street photographers. Highlighted by soft pastel rose pink cards and clean typography.',
-    frontTextList: ['BLA_STUDIOS', 'Bilal Ahmad', 'Creative Director & Photographer'],
-    backTextList: ['WWW.BLASTUDIOS.IN', '+91 91195 27287', 'hello@bilalahmad.design', 'Mumbai, India'],
+    frontTextList: ['ARC_NOVA_STUDIOS', 'Arc Nova Photo', 'Creative Director & Art Lead'],
+    backTextList: ['WWW.ARCNOVADESIGN.IN', '+91 91195 27287', 'hello@arcnovadesign.in', 'Mumbai, India'],
     colors: {
       bgFront: 'bg-[#FDF6F5]',
       bgBack: 'bg-[#1a1a1a]',
       textFront: 'text-[#2D1B18]',
       textBack: 'text-[#EEEEEE]',
-      accent: '#FFB2A6'
+      accent: '#FFB2A6',
+      bgImageFront: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=650&q=85',
+      bgImageBack: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=650&q=85'
     },
     details: 'Elegant pastel pink card with rich charcoal branding highlights. Fits premium aesthetic creators.'
   },
@@ -251,14 +253,16 @@ export const BUSINESS_CARDS_SHOWCASE: BusinessCardShowcaseItem[] = [
     title: 'Film Studio Card',
     role: 'Cinematographer & Director',
     description: 'Bold, brutalist minimalist card inspired by classic film reel text formatting and premium creative studios.',
-    frontTextList: ['NOVA FILM CO.', 'BILAL AHMAD', 'DIRECTOR OF PHOTOGRAPHY'],
-    backTextList: ['WWW.NOVAFILM.CO', 'STUDIO_NOVA@INSTAGRAM', 'NEW DELHI, INDIA'],
+    frontTextList: ['ARC NOVA FILM CO.', 'ARC NOVA MOTION', 'DIRECTOR OF PHOTOGRAPHY'],
+    backTextList: ['WWW.ARCNOMOTION.CO', 'STUDIO_NOVA@INSTAGRAM', 'NEW DELHI, INDIA'],
     colors: {
       bgFront: 'bg-[#121212]',
       bgBack: 'bg-[#f4f3ef]',
       textFront: 'text-[#E5E5E5]',
       textBack: 'text-[#1a1a1a]',
-      accent: '#E6C64C'
+      accent: '#E6C64C',
+      bgImageFront: 'https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=650&q=85',
+      bgImageBack: 'https://images.unsplash.com/photo-1604076913837-52ab5629fba9?auto=format&fit=crop&w=650&q=85'
     },
     details: 'High durability high-contrast aesthetic setup. Perfect for producers, creative artists, and cinematographers.'
   },
@@ -267,14 +271,16 @@ export const BUSINESS_CARDS_SHOWCASE: BusinessCardShowcaseItem[] = [
     title: 'Fashion House Card',
     role: 'Luxury Apparel Designer',
     description: 'Luxury aesthetic card focusing on clean typography matching high-fashion couture collections.',
-    frontTextList: ['MAISON DE BILAL', 'Bilal Ahmad', 'Senior Couture Designer'],
-    backTextList: ['WWW.MAISONDEBILAL.COM', 'COUTURE@MAISONBILAL.COM', 'NEW YORK - PARIS - INDIA'],
+    frontTextList: ['ARC NOVA COUTURE', 'Arc Nova Atelier', 'Senior Couture Designer'],
+    backTextList: ['WWW.ARCNOVACOUTURE.COM', 'COUTURE@ARCNOVA.COM', 'NEW YORK - PARIS - INDIA'],
     colors: {
       bgFront: 'bg-[#F9F6F0]',
       bgBack: 'bg-[#2E3532]',
       textFront: 'text-[#1E2522]',
       textBack: 'text-[#F9F6F0]',
-      accent: '#C5A880'
+      accent: '#C5A880',
+      bgImageFront: 'https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&w=650&q=85',
+      bgImageBack: 'https://images.unsplash.com/photo-1618005198143-e5283b519a7f?auto=format&fit=crop&w=650&q=85'
     },
     details: 'Luxury minimalist card featuring gold tone fonts on ivory and forest green matte canvas bases.'
   }

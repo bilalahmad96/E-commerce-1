@@ -26,14 +26,14 @@ export default function Hero({ openContactModal }: HeroProps) {
   return (
     <section
       id="home"
-      className="relative min-h-screen pt-28 pb-16 flex items-center overflow-hidden bg-gradient-to-br from-[#FEFBF9] via-[#FAF6F0] to-[#F1F3F9] dark:from-zinc-950 dark:via-zinc-900 dark:to-zinc-950 transition-colors duration-300"
+      className="relative min-h-screen pt-28 pb-16 flex items-center overflow-hidden bg-gradient-to-br from-creative-bg-1 via-creative-bg-2 to-creative-bg-3 text-creative-text transition-colors duration-300"
     >
       {/* Decorative artistic background vectors */}
-      <div className="absolute top-[15%] left-[-10%] w-[40%] h-[40%] rounded-full bg-pink-100/40 dark:bg-pink-950/10 blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-[10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-blue-100/35 dark:bg-blue-900/10 blur-[150px] pointer-events-none" />
+      <div className="absolute top-[15%] left-[-10%] w-[40%] h-[40%] rounded-full bg-creative-accent/5 dark:bg-creative-accent/5 blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-[10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-creative-accent-sec/5 blur-[150px] pointer-events-none" />
       
       {/* Premium Elegant Studio Grid lines */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:30px_30px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--grid-line)_1px,transparent_1px),linear-gradient(to_bottom,var(--grid-line)_1px,transparent_1px)] bg-[size:30px_30px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -45,10 +45,10 @@ export default function Hero({ openContactModal }: HeroProps) {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 shadow-xs"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-creative-card border border-creative-border shadow-xs"
             >
-              <span className="flex h-2 w-2 rounded-full bg-emerald-500 animate-ping" />
-              <span className="font-mono text-[10px] uppercase tracking-wider text-zinc-600 dark:text-zinc-400 font-semibold">
+              <span className="flex h-2 w-2 rounded-full bg-creative-accent animate-ping" />
+              <span className="font-mono text-[10px] uppercase tracking-wider text-creative-muted font-semibold">
                 Available for Elite Projects • India
               </span>
             </motion.div>
@@ -58,10 +58,11 @@ export default function Hero({ openContactModal }: HeroProps) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="font-sans text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-zinc-900 dark:text-white leading-[1.08]"
+              className="font-sans text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-creative-text leading-[1.08]"
             >
+              <span className="arc-nova-logo text-3xl sm:text-4xl lg:text-5xl block mb-3">Arc Nova</span>
               Transforming Ideas <br />
-              Into <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C5A880] to-rose-400">Stunning</span> Digital Designs
+              Into <span className="text-transparent bg-clip-text bg-gradient-to-r from-creative-accent to-creative-accent-sec">Stunning</span> Digital Designs
             </motion.h1>
 
             <motion.p
@@ -69,7 +70,7 @@ export default function Hero({ openContactModal }: HeroProps) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="font-sans text-base sm:text-lg text-zinc-600 dark:text-zinc-300 max-w-xl leading-relaxed"
+              className="font-sans text-base sm:text-lg text-creative-muted max-w-xl leading-relaxed"
             >
               I help businesses, brands, and individuals create beautiful websites, business cards, invitation cards, greeting cards, and custom designs that leave a lasting impression.
             </motion.p>
@@ -85,7 +86,7 @@ export default function Hero({ openContactModal }: HeroProps) {
               <button
                 id="hero-cta-whatsapp"
                 onClick={handleWhatsAppClick}
-                className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-7 py-4.5 rounded-full bg-[#121212] hover:bg-zinc-800 dark:bg-white dark:hover:bg-zinc-100 text-white dark:text-black font-semibold text-sm tracking-wide transition-all shadow-md hover:-translate-y-0.5"
+                className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-7 py-4.5 rounded-full bg-creative-text hover:opacity-90 text-creative-bg-1 font-semibold text-sm tracking-wide transition-all shadow-md hover:-translate-y-0.5"
               >
                 📱 Contact on WhatsApp
               </button>
@@ -93,7 +94,7 @@ export default function Hero({ openContactModal }: HeroProps) {
               <button
                 id="hero-cta-insta"
                 onClick={handleInstagramClick}
-                className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-7 py-4.5 rounded-full bg-white hover:bg-zinc-50 dark:bg-zinc-900 dark:hover:bg-zinc-800 text-zinc-800 dark:text-zinc-200 border border-zinc-200 dark:border-zinc-800 font-semibold text-sm tracking-wide transition-all shadow-xs hover:-translate-y-0.5"
+                className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-7 py-4.5 rounded-full bg-creative-bg-2 border border-creative-border hover:bg-creative-bg-3 text-creative-text font-semibold text-sm tracking-wide transition-all shadow-xs hover:-translate-y-0.5"
               >
                 📸 Follow on Instagram
               </button>
@@ -101,7 +102,7 @@ export default function Hero({ openContactModal }: HeroProps) {
               <a
                 id="hero-cta-portfolio"
                 href="#portfolio"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4.5 rounded-full text-zinc-800 dark:text-zinc-200 hover:text-black dark:hover:text-white font-semibold text-sm hover:underline transition-all"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4.5 rounded-full text-creative-text hover:underline font-semibold text-sm transition-all"
               >
                 💼 View Portfolio <ArrowRight size={16} />
               </a>
@@ -113,19 +114,19 @@ export default function Hero({ openContactModal }: HeroProps) {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.5 }}
-              className="grid grid-cols-3 gap-6 pt-6 border-t border-zinc-100 dark:border-zinc-900 w-full max-w-lg"
+              className="grid grid-cols-3 gap-6 pt-6 border-t border-creative-border w-full max-w-lg"
             >
               <div>
-                <span className="block text-xl font-bold text-zinc-900 dark:text-white">100%</span>
-                <span className="block text-xs text-zinc-500 dark:text-zinc-400 font-mono tracking-wider uppercase mt-1">Satisfaction</span>
+                <span className="block text-xl font-bold text-creative-text">100%</span>
+                <span className="block text-xs text-creative-muted font-mono tracking-wider uppercase mt-1">Satisfaction</span>
               </div>
               <div>
-                <span className="block text-xl font-bold text-zinc-900 dark:text-white">Fast</span>
-                <span className="block text-xs text-zinc-500 dark:text-zinc-400 font-mono tracking-wider uppercase mt-1">Delivery</span>
+                <span className="block text-xl font-bold text-creative-text">Fast</span>
+                <span className="block text-xs text-creative-muted font-mono tracking-wider uppercase mt-1">Delivery</span>
               </div>
               <div>
-                <span className="block text-xl font-bold text-zinc-900 dark:text-white">Elite</span>
-                <span className="block text-xs text-zinc-500 dark:text-zinc-400 font-mono tracking-wider uppercase mt-1">Aesthetic</span>
+                <span className="block text-xl font-bold text-creative-text">Elite</span>
+                <span className="block text-xs text-creative-muted font-mono tracking-wider uppercase mt-1">Aesthetic</span>
               </div>
             </motion.div>
           </div>

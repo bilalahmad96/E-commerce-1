@@ -1,10 +1,91 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;550;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;550;700&family=JetBrains+Mono:wght@400;500;700&family=Syncopate:wght@700&family=Syne:wght@700;800&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-sans: 'Inter', system-ui, sans-serif;
   --font-display: 'Space Grotesk', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
+  
+  --color-creative-bg-1: var(--bg-primary);
+  --color-creative-bg-2: var(--bg-secondary);
+  --color-creative-bg-3: var(--bg-tertiary);
+  --color-creative-text: var(--text-main);
+  --color-creative-muted: var(--text-muted);
+  --color-creative-accent: var(--accent);
+  --color-creative-accent-sec: var(--accent-secondary);
+  --color-creative-card: var(--card-bg);
+  --color-creative-border: var(--card-border);
+  --color-creative-grid: var(--grid-line);
+}
+
+:root {
+  /* Default: Sand Gold Minimalist (Light) */
+  --bg-primary: #FEFBF9;
+  --bg-secondary: #FAF6F0;
+  --bg-tertiary: #F1F3F9;
+  --text-main: #18181b;
+  --text-muted: #52525b;
+  --accent: #C5A880;
+  --accent-secondary: #f43f5e;
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --card-border: rgba(244, 244, 245, 0.6);
+  --grid-line: rgba(128, 128, 128, 0.05);
+}
+
+.theme-dark-minimalist {
+  /* Elegant Obsidian & Gold (Dark) */
+  --bg-primary: #09090b;
+  --bg-secondary: #121214;
+  --bg-tertiary: #181a20;
+  --text-main: #f4f4f5;
+  --text-muted: #a1a1aa;
+  --accent: #C5A880;
+  --accent-secondary: #fda4af;
+  --card-bg: rgba(18, 18, 20, 0.85);
+  --card-border: rgba(39, 39, 42, 0.6);
+  --grid-line: rgba(255, 255, 255, 0.03);
+}
+
+.theme-cosmic {
+  /* Midnight Cosmic Nebula */
+  --bg-primary: #05020c;
+  --bg-secondary: #0d0621;
+  --bg-tertiary: #18093d;
+  --text-main: #faf9fb;
+  --text-muted: #bdaed6;
+  --accent: #d946ef;
+  --accent-secondary: #3b82f6;
+  --card-bg: rgba(13, 6, 33, 0.85);
+  --card-border: rgba(217, 70, 239, 0.3);
+  --grid-line: rgba(168, 85, 247, 0.08);
+}
+
+.theme-matrix {
+  /* Acid Cyberpunk matrix */
+  --bg-primary: #020703;
+  --bg-secondary: #000c02;
+  --bg-tertiary: #041d08;
+  --text-main: #e2fce6;
+  --text-muted: #7ed08d;
+  --accent: #22c55e;
+  --accent-secondary: #a3e635;
+  --card-bg: rgba(2, 7, 3, 0.85);
+  --card-border: rgba(34, 197, 94, 0.35);
+  --grid-line: rgba(34, 197, 94, 0.09);
+}
+
+.theme-vaporwave {
+  /* Dreamy Retro Sunset */
+  --bg-primary: #140b29;
+  --bg-secondary: #2b0b3d;
+  --bg-tertiary: #440d63;
+  --text-main: #ffffff;
+  --text-muted: #f472b6;
+  --accent: #ff007f;
+  --accent-secondary: #00f0ff;
+  --card-bg: rgba(27, 11, 61, 0.85);
+  --card-border: rgba(255, 0, 127, 0.35);
+  --grid-line: rgba(0, 240, 255, 0.09);
 }
 
 html {
@@ -55,4 +136,44 @@ html {
 .animate-spin-slow {
   animation: spinSlow 20s infinite linear;
 }
+
+/* Arc Nova Creative Branding Custom Fonts & Textures */
+.arc-nova-logo {
+  font-family: 'Syncopate', sans-serif;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+  text-transform: uppercase;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: all 0.5s ease;
+}
+
+/* Metallic gold gradient texture */
+:root .arc-nova-logo {
+  background-image: linear-gradient(120deg, #d4af37 0%, #f3e5ab 30%, #aa7c11 70%, #d4af37 100%);
+  text-shadow: 0 0 1px rgba(197, 168, 128, 0.25);
+  background-size: 200% auto;
+}
+
+.theme-dark-minimalist .arc-nova-logo {
+  background-image: linear-gradient(120deg, #f3e5ab 0%, #d4af37 50%, #f4f4f5 100%);
+  text-shadow: 0 0 2px rgba(197, 168, 128, 0.4);
+}
+
+.theme-cosmic .arc-nova-logo {
+  background-image: linear-gradient(120deg, #ec4899 0%, #8b5cf6 50%, #06b6d4 100%);
+  text-shadow: 0 0 12px rgba(217, 70, 239, 0.6);
+}
+
+.theme-matrix .arc-nova-logo {
+  background-image: linear-gradient(120deg, #22c55e 0%, #a3e635 50%, #4ade80 100%);
+  text-shadow: 0 0 10px rgba(34, 197, 94, 0.8);
+}
+
+.theme-vaporwave .arc-nova-logo {
+  background-image: linear-gradient(120deg, #ff007f 0%, #00f0ff 50%, #ff007f 100%);
+  text-shadow: 0 0 15px rgba(255, 0, 127, 0.7);
+}
+
 

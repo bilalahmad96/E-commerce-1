@@ -90,14 +90,14 @@ export default function About() {
           {/* Right Column: Narrative Info */}
           <div className="lg:col-span-7 flex flex-col justify-center space-y-8">
             <div className="space-y-3">
-              <span className="font-mono text-xs uppercase tracking-widest text-[#C5A880] font-bold">About The Artist</span>
-              <h2 id="about-heading" className="font-sans text-3xl sm:text-4xl font-bold tracking-tight text-zinc-900 dark:text-white">
+              <span className="font-mono text-xs uppercase tracking-widest text-[#C5A880] font-bold">About The Director</span>
+              <h2 id="about-heading" className="font-sans text-3xl sm:text-4xl font-bold tracking-tight text-creative-text">
                 Meet Bilal Ahmad
               </h2>
             </div>
 
-            <p id="about-description" className="font-sans text-base text-zinc-600 dark:text-zinc-300 leading-relaxed">
-              Hello, I&apos;m Bilal Ahmad, a creative Web Designer and Digital Design Specialist. My ultimate goal is to help businesses, brands, and individuals build a professional, highly trustworthy identity through beautiful, lightweight, and modern designs.
+            <p id="about-description" className="font-sans text-base text-creative-muted leading-relaxed">
+              Hello, I&apos;m Bilal Ahmad, Creator & Lead Director behind <span className="arc-nova-logo text-xs">Arc Nova</span>. Our ultimate mission is to empower visionaries, brands, and digital-first businesses through exquisite bespoke high-end designs, futuristic interactive layouts, and prestigious physical assets like minimalist business cards and digital identity platforms.
             </p>
 
             {/* Custom Grid Checklist with icons */}

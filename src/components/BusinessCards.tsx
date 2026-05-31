@@ -69,25 +69,29 @@ export default function BusinessCards({ onQuoteTrigger }: BusinessCardsProps) {
                   >
                     
                     {/* Front Side Viewport */}
-                    <div className={`absolute inset-0 w-full h-full rounded-2xl p-6 flex flex-col justify-between border border-black/5 dark:border-white/10 backface-hidden shadow-lg ${card.colors.bgFront}`}>
-                      <div className="flex justify-between items-start">
+                    <div 
+                      className={`absolute inset-0 w-full h-full rounded-2xl p-6 flex flex-col justify-between border border-black/5 dark:border-white/10 backface-hidden shadow-lg ${card.colors.bgFront} relative overflow-hidden`}
+                      style={card.colors.bgImageFront ? { backgroundImage: `url(${card.colors.bgImageFront})`, backgroundSize: 'cover', backgroundPosition: 'center' } : undefined}
+                    >
+                      {card.colors.bgImageFront && <div className="absolute inset-0 bg-black/5 dark:bg-black/15 pointer-events-none z-0" />}
+                      <div className="flex justify-between items-start relative z-10">
                         <span className="font-mono text-[9px] tracking-widest font-bold text-zinc-400">FRONT</span>
                         <div className="w-2 h-2 rounded-full" style={{ backgroundColor: card.colors.accent }} />
                       </div>
 
-                      <div className="space-y-1">
-                        <p className="font-sans text-xs uppercase tracking-widest text-zinc-400 font-semibold">{card.frontTextList[0]}</p>
-                        <h4 className={`font-sans text-xl font-bold tracking-tight ${card.colors.textFront}`}>
+                      <div className="space-y-1 relative z-10">
+                        <p className="font-sans text-xs uppercase tracking-widest text-[#C5A880] font-semibold">{card.frontTextList[0]}</p>
+                        <h4 className={`font-sans text-xl font-bold tracking-tight ${card.colors.textFront} [text-shadow:_0_1px_3px_rgba(0,0,0,0.15)]`}>
                           {card.frontTextList[1]}
                         </h4>
-                        <p className="font-mono text-[9px] uppercase tracking-wider text-zinc-400 mt-1 font-medium select-none">
+                        <p className={`font-mono text-[9px] uppercase tracking-wider ${card.colors.textFront} opacity-85 mt-1 font-semibold select-none`}>
                           {card.frontTextList[2]}
                         </p>
                       </div>
 
-                      <div className="flex justify-between items-center text-[8px] font-mono tracking-widest text-zinc-400">
+                      <div className="flex justify-between items-center text-[8px] font-mono tracking-widest text-zinc-400 relative z-10">
                         <span>EST 2026</span>
-                        <span className="animate-pulse flex items-center gap-1">
+                        <span className="animate-pulse flex items-center gap-1 text-zinc-400">
                           <RotateCw size={9} /> CLICK TO FLIP
                         </span>
                       </div>
@@ -95,27 +99,29 @@ export default function BusinessCards({ onQuoteTrigger }: BusinessCardsProps) {
 
                     {/* Back Side Viewport */}
                     <div
-                      className={`absolute inset-0 w-full h-full rounded-2xl p-6 flex flex-col justify-between border border-black/5 dark:border-white/10 backface-hidden shadow-lg rotate-y-180 ${card.colors.bgBack}`}
+                      className={`absolute inset-0 w-full h-full rounded-2xl p-6 flex flex-col justify-between border border-black/5 dark:border-white/10 backface-hidden shadow-lg rotate-y-180 ${card.colors.bgBack} relative overflow-hidden`}
+                      style={card.colors.bgImageBack ? { backgroundImage: `url(${card.colors.bgImageBack})`, backgroundSize: 'cover', backgroundPosition: 'center' } : undefined}
                     >
-                      <div className="flex justify-between items-center border-b border-zinc-250 pb-2.5">
-                        <span className="font-mono text-[9px] tracking-widest font-bold text-zinc-500">BACK</span>
-                        <span className="font-sans text-[10px] font-bold tracking-widest text-zinc-400 uppercase">{card.frontTextList[0]}</span>
+                      {card.colors.bgImageBack && <div className="absolute inset-0 bg-black/10 dark:bg-black/25 pointer-events-none z-0" />}
+                      <div className="flex justify-between items-center border-b border-zinc-200/15 pb-2.5 relative z-10">
+                        <span className="font-mono text-[9px] tracking-widest font-bold text-zinc-400">BACK</span>
+                        <span className={`font-sans text-[10px] font-bold tracking-widest ${card.colors.textBack} uppercase`}>{card.frontTextList[0]}</span>
                       </div>
 
                       {/* Back details text list content layout */}
-                      <div className="space-y-1 my-auto">
+                      <div className="space-y-1 my-auto relative z-10">
                         {card.backTextList.map((line, lIdx) => (
                           <p
                             key={lIdx}
-                            className={`font-mono text-[9px] tracking-wider truncate ${card.colors.textBack} leading-relaxed opacity-90`}
+                            className={`font-mono text-[9.5px] tracking-wider truncate ${card.colors.textBack} leading-relaxed font-semibold`}
                           >
                             {line}
                           </p>
                         ))}
                       </div>
 
-                      <div className="flex justify-between items-center text-[7px] font-mono tracking-wider text-zinc-500 pt-2 border-t border-zinc-200/10">
-                        <span>BILAL AHMAD DESIGNS</span>
+                      <div className="flex justify-between items-center text-[7px] font-mono tracking-wider text-zinc-400 pt-2 border-t border-zinc-200/20 relative z-10">
+                        <span>ARC NOVA STUDIOS</span>
                         <span className="text-zinc-400">CLICK TO FLIP BACK</span>
                       </div>
                     </div>

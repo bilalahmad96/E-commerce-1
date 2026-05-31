@@ -40,6 +40,8 @@ export interface BusinessCardShowcaseItem {
     textFront: string;
     textBack: string;
     accent: string;
+    bgImageFront?: string;
+    bgImageBack?: string;
   };
   details: string;
 }

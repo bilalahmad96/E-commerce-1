@@ -17,10 +17,13 @@ import WhyChooseUs from './components/WhyChooseUs';
 import Pricing from './components/Pricing';
 import InstaTestimonials from './components/InstaTestimonials';
 import ContactForm from './components/ContactForm';
+import VercelAnalyticsDashboard from './components/VercelAnalyticsDashboard';
 import Footer from './components/Footer';
 
 export default function App() {
-  const [darkMode, setDarkMode] = useState<boolean>(false);
+  const [theme, setTheme] = useState<string>(() => {
+    return localStorage.getItem('creative-studio-theme') || 'minimalist';
+  });
   const [selectedService, setSelectedService] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(true);
   const [showWaHint, setShowWaHint] = useState<boolean>(true);
@@ -33,24 +36,67 @@ export default function App() {
     return () => clearTimeout(timer);
   }, []);
 
-  // Update dark mode class on HTML document
+  // Update theme class on HTML document
   useEffect(() => {
     const root = window.document.documentElement;
-    if (darkMode) {
-      root.classList.add('dark');
-    } else {
-      root.classList.remove('dark');
+    root.classList.remove('theme-dark-minimalist', 'theme-cosmic', 'theme-matrix', 'theme-vaporwave', 'dark');
+    
+    if (theme === 'dark') {
+      root.classList.add('theme-dark-minimalist', 'dark');
+    } else if (theme === 'cosmic') {
+      root.classList.add('theme-cosmic', 'dark');
+    } else if (theme === 'matrix') {
+      root.classList.add('theme-matrix', 'dark');
+    } else if (theme === 'vaporwave') {
+      root.classList.add('theme-vaporwave', 'dark');
     }
-  }, [darkMode]);
+    localStorage.setItem('creative-studio-theme', theme);
+  }, [theme]);
 
   // High conversion scroll and prefill handler
   const handleServiceSelect = (serviceTitle: string) => {
     setSelectedService(serviceTitle);
     const element = document.getElementById('contact');
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const headerOffset = 90;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY - headerOffset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
     }
   };
+
+  // Global smooth scrolling with offset for all hash links and triggers across the app
+  useEffect(() => {
+    const handleGlobalHashClick = (e: MouseEvent) => {
+      const target = (e.target as HTMLElement).closest('a');
+      if (!target) return;
+      
+      const href = target.getAttribute('href');
+      if (href && href.startsWith('#') && href.length > 1) {
+        e.preventDefault();
+        const id = href.substring(1);
+        const element = document.getElementById(id);
+        if (element) {
+          const headerOffset = 90; // Exactly compensates for sticky navbar height + aesthetic buffer
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.scrollY - headerOffset;
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+          
+          window.history.pushState(null, '', href);
+        }
+      }
+    };
+
+    window.addEventListener('click', handleGlobalHashClick);
+    return () => window.removeEventListener('click', handleGlobalHashClick);
+  }, []);
 
   const handleWhatsAppFloatingClick = () => {
     const text = encodeURIComponent("Hello Bilal Ahmad, I would like to discuss a design project.");
@@ -58,7 +104,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-zinc-900 dark:bg-black dark:text-zinc-100 transition-colors duration-300 font-sans selection:bg-[#C5A880]/30 antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-creative-bg-1 text-creative-text transition-all duration-550 font-sans selection:bg-creative-accent/30 antialiased overflow-x-hidden">
       
       {/* 1. INITIAL LOADING BANNER SCREEN */}
       <AnimatePresence>
@@ -68,7 +114,7 @@ export default function App() {
             initial={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
-            className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-white dark:bg-black"
+            className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-creative-bg-1"
           >
             <div className="space-y-4 text-center">
               {/* Premium abstract ring */}
@@ -76,13 +122,13 @@ export default function App() {
                 initial={{ scale: 0.8, rotate: 0 }}
                 animate={{ scale: 1, rotate: 360 }}
                 transition={{ repeat: Infinity, duration: 1.5, ease: 'easeInOut' }}
-                className="w-12 h-12 border-2 border-dashed border-[#C5A880] rounded-full mx-auto"
+                className="w-12 h-12 border-2 border-dashed border-creative-accent rounded-full mx-auto"
               />
               <div className="space-y-1">
-                <h1 className="font-sans text-lg font-bold uppercase tracking-widest text-[#121212] dark:text-white">
-                  Bilal Ahmad
+                <h1 className="arc-nova-logo text-xl">
+                  Arc Nova
                 </h1>
-                <p className="font-mono text-[9px] uppercase tracking-widest text-[#C5A880] font-semibold">
+                <p className="font-mono text-[9px] uppercase tracking-widest text-creative-accent font-semibold animate-pulse">
                   Creative Design Portfolio
                 </p>
               </div>
@@ -101,8 +147,8 @@ export default function App() {
         >
           {/* 2. NAVIGATION BAR */}
           <Navbar
-            darkMode={darkMode}
-            setDarkMode={setDarkMode}
+            theme={theme}
+            setTheme={setTheme}
             openContactModal={() => handleServiceSelect('General Design Inquiry')}
           />
 
@@ -135,6 +181,9 @@ export default function App() {
             selectedService={selectedService}
             setSelectedService={setSelectedService}
           />
+
+          {/* Vercel Live Telemetry Companion Hub */}
+          <VercelAnalyticsDashboard />
 
           {/* 12. DESIGNER FOOTER */}
           <Footer />

@@ -22,8 +22,8 @@ export default function Footer() {
           {/* Brand/Slogan Side (cols: 5) */}
           <div className="md:col-span-5 space-y-4">
             <a href="#home" className="flex flex-col">
-              <span className="font-sans text-xl font-bold uppercase tracking-widest text-white leading-none">
-                Bilal Ahmad
+              <span className="arc-nova-logo text-xl text-white leading-none">
+                Arc Nova
               </span>
               <span className="font-mono text-[9px] tracking-widest text-[#C5A880] uppercase mt-1">
                 Creative Design Studio
@@ -100,7 +100,7 @@ export default function Footer() {
         <div className="flex flex-col sm:flex-row justify-between items-center pt-8 text-[10px] font-mono text-zinc-600 gap-4">
           <div className="flex items-center gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-            <span>© {currentYear} Bilal Ahmad Design Studio. All Rights Reserved.</span>
+            <span>© {currentYear} Arc Nova. All Rights Reserved. Co-founded by Bilal Ahmad.</span>
           </div>
           <div className="flex gap-6">
             <span className="hover:text-zinc-400 cursor-pointer">Terms of Design</span>
