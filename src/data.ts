@@ -231,6 +231,24 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
 
 export const BUSINESS_CARDS_SHOWCASE: BusinessCardShowcaseItem[] = [
   {
+    id: 'card-arc-nova',
+    title: 'Arc Nova Signature Card',
+    role: 'Lead Creator & Director',
+    description: 'The ultimate studio flagship card. A pristine high-concept ivory canvas featuring custom gold geometry, embedded logo, and elegant typography.',
+    frontTextList: ['ARC NOVA', 'Arc Nova Labs', 'Creative Director & Founder'],
+    backTextList: ['WWW.ARCNOVADESIGN.IN', '+91 91195 27287', '@arcnova.studios', 'Mumbai, India'],
+    colors: {
+      bgFront: 'bg-[#FAFAF9]',
+      bgBack: 'bg-[#FAF9F5]',
+      textFront: 'text-zinc-900',
+      textBack: 'text-zinc-800',
+      accent: '#D4AF37',
+      bgImageFront: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=650&q=85',
+      bgImageBack: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=650&q=85'
+    },
+    details: 'Luxury minimalist card featuring metallic gold fonts on ivory and white sand matte surfaces.'
+  },
+  {
     id: 'card-photo',
     title: 'Photography Studio Card',
     role: 'Creative Photographer',

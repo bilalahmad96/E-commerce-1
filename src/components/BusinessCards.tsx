@@ -47,7 +47,7 @@ export default function BusinessCards({ onQuoteTrigger }: BusinessCardsProps) {
         </div>
 
         {/* Business Cards Showcase Row */}
-        <div id="business-cards-grid" className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+        <div id="business-cards-grid" className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
           {BUSINESS_CARDS_SHOWCASE.map((card) => {
             const isFlipped = !!flippedCards[card.id];
             
@@ -78,6 +78,15 @@ export default function BusinessCards({ onQuoteTrigger }: BusinessCardsProps) {
                         <span className="font-mono text-[9px] tracking-widest font-bold text-zinc-400">FRONT</span>
                         <div className="w-2 h-2 rounded-full" style={{ backgroundColor: card.colors.accent }} />
                       </div>
+
+                      {/* Custom Arc Nova Creative Logo Mark */}
+                      {card.id === 'card-arc-nova' && (
+                        <div className="absolute right-6 top-8 flex flex-col items-center justify-center opacity-85 pointer-events-none z-15 bg-white/20 dark:bg-black/10 backdrop-blur-xs p-1.5 rounded-full border border-white/30">
+                          <div className="w-8 h-8 rounded-full border border-dashed border-[#D4AF37] flex items-center justify-center animate-[spin_10s_linear_infinite]">
+                            <Sparkles size={11} className="text-[#D4AF37]" />
+                          </div>
+                        </div>
+                      )}
 
                       <div className="space-y-1 relative z-10">
                         <p className="font-sans text-xs uppercase tracking-widest text-[#C5A880] font-semibold">{card.frontTextList[0]}</p>
