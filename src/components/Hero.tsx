@@ -7,6 +7,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { LogIn, ArrowRight, CheckCircle2, Award } from 'lucide-react';
 import { IMAGE_ASSETS } from '../data';
+import BlurredImage from './BlurredImage';
 
 interface HeroProps {
   openContactModal: (service?: string) => void;
@@ -149,7 +150,7 @@ export default function Hero({ openContactModal }: HeroProps) {
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-400" />
                 <span className="text-[9px] font-mono text-zinc-400 ml-2">bilalahmad.design/portfolio</span>
               </div>
-              <img
+              <BlurredImage
                 src={IMAGE_ASSETS.webHero}
                 alt="Website Portfolio Mockup"
                 referrerPolicy="no-referrer"
@@ -166,7 +167,7 @@ export default function Hero({ openContactModal }: HeroProps) {
               whileHover={{ rotate: 0, scale: 1.05, y: -10, zIndex: 40 }}
               className="absolute w-[200px] sm:w-[260px] aspect-[1.58] rounded-xl overflow-hidden bg-white dark:bg-zinc-950 shadow-2xl dark:shadow-black/60 border border-zinc-100 dark:border-zinc-900 cursor-pointer bottom-16 right-4 sm:right-6 lg:-right-4 z-30 transition-all"
             >
-              <img
+              <BlurredImage
                 src={IMAGE_ASSETS.businessCard}
                 alt="Business Card Mockup"
                 referrerPolicy="no-referrer"
@@ -183,7 +184,7 @@ export default function Hero({ openContactModal }: HeroProps) {
               whileHover={{ rotate: 0, scale: 1.05, y: -10, zIndex: 40 }}
               className="absolute w-[180px] sm:w-[220px] aspect-[1.4] rounded-xl overflow-hidden bg-white shadow-xl dark:shadow-black/40 border border-zinc-100 dark:border-zinc-800 cursor-pointer bottom-4 left-6 sm:left-12 z-10 transition-all"
             >
-              <img
+              <BlurredImage
                 src={IMAGE_ASSETS.invitation}
                 alt="Wedding Invitation Mockup"
                 referrerPolicy="no-referrer"
@@ -200,7 +201,7 @@ export default function Hero({ openContactModal }: HeroProps) {
               whileHover={{ scale: 1.1, y: -10, zIndex: 40 }}
               className="absolute w-[130px] sm:w-[170px] aspect-[1.1] rounded-xl overflow-hidden bg-white shadow-lg dark:shadow-black/40 border border-rose-50/50 dark:border-zinc-800 cursor-pointer top-12 right-12 z-25 transition-all"
             >
-              <img
+              <BlurredImage
                 src={IMAGE_ASSETS.greeting}
                 alt="Creative Greetings Mockup"
                 referrerPolicy="no-referrer"

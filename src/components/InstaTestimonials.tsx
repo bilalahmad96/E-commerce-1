@@ -7,6 +7,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Star, Instagram, Heart, MessageCircle, ChevronLeft, ChevronRight, User } from 'lucide-react';
 import { TESTIMONIALS, IMAGE_ASSETS } from '../data';
+import BlurredImage from './BlurredImage';
 
 export default function InstaTestimonials() {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -170,18 +171,22 @@ export default function InstaTestimonials() {
             {/* Slider frame image container */}
             <div className="relative aspect-square overflow-hidden rounded-2xl bg-zinc-200">
               <AnimatePresence mode="wait">
-                <motion.img
+                <motion.div
                   id={`insta-slide-img-${instaPosts[activeSlide].id}`}
                   key={activeSlide}
-                  src={instaPosts[activeSlide].image}
-                  alt={instaPosts[activeSlide].caption}
-                  referrerPolicy="no-referrer"
                   initial={{ opacity: 0, scale: 1.05 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.4 }}
-                  className="w-full h-full object-cover"
-                />
+                  className="w-full h-full"
+                >
+                  <BlurredImage
+                    src={instaPosts[activeSlide].image}
+                    alt={instaPosts[activeSlide].caption}
+                    referrerPolicy="no-referrer"
+                    className="w-full h-full object-cover"
+                  />
+                </motion.div>
               </AnimatePresence>
               
               {/* Interaction controllers left/right */}

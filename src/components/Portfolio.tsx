@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Plus, X, ArrowUpRight, MessageSquare, ZoomIn } from 'lucide-react';
 import { PORTFOLIO_ITEMS } from '../data';
 import { PortfolioItem, DesignCategory } from '../types';
+import BlurredImage from './BlurredImage';
 
 export default function Portfolio() {
   const [activeCategory, setActiveCategory] = useState<DesignCategory>('all');
@@ -94,7 +95,7 @@ export default function Portfolio() {
                 className="group relative cursor-pointer rounded-2xl overflow-hidden bg-neutral-50 dark:bg-zinc-900/60 border border-zinc-100 dark:border-zinc-800/80 aspect-[1.25] shadow-xs hover:shadow-xl transition-all"
               >
                 {/* Thumbnail Image */}
-                <img
+                <BlurredImage
                   src={item.image}
                   alt={item.title}
                   referrerPolicy="no-referrer"
@@ -161,7 +162,7 @@ export default function Portfolio() {
 
                 {/* Image Section (cols: 7) */}
                 <div className="md:col-span-7 bg-zinc-50 dark:bg-zinc-900 flex items-center justify-center min-h-[250px] md:min-h-[480px] p-4 relative group overflow-hidden">
-                  <img
+                  <BlurredImage
                     src={selectedProject.image}
                     alt={selectedProject.title}
                     referrerPolicy="no-referrer"

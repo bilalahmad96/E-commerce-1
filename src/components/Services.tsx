@@ -66,11 +66,16 @@ export default function Services({ onServiceSelect }: ServicesProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: idx * 0.1 }}
+                whileHover={{ 
+                  y: -8, 
+                  scale: 1.02,
+                  transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] }
+                }}
                 className={`relative flex flex-col justify-between p-8 rounded-3xl bg-white dark:bg-zinc-900 border ${
                   isWeb
                     ? 'border-rose-100 dark:border-rose-950/30 shadow-xl'
                     : 'border-zinc-200/50 dark:border-zinc-800 shadow-xs'
-                } hover:shadow-xl transition-all duration-300 group`}
+                } hover:shadow-2xl dark:hover:shadow-black/40 hover:border-[#C5A880]/30 dark:hover:border-[#C5A880]/20 transition-[box-shadow,border-color] duration-500 ease-out group`}
               >
                 {srv.badge && (
                   <span className="absolute top-6 right-6 inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-mono tracking-widest uppercase font-bold bg-[#C5A880]/10 dark:bg-[#C5A880]/20 text-[#A6885D] dark:text-[#E2C59F]">
