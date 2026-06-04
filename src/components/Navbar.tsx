@@ -29,6 +29,7 @@ export default function Navbar({ theme, setTheme, openContactModal }: NavbarProp
     { label: 'About', href: '#about' },
     { label: 'Services', href: '#services' },
     { label: 'Portfolio', href: '#portfolio' },
+    { label: 'Banners', href: '#banners-showcase' },
     { label: 'Process', href: '#process' },
     { label: 'Pricing', href: '#pricing' },
     { label: 'FAQ', href: '#faq' },

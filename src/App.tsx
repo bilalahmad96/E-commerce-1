@@ -13,6 +13,7 @@ import About from './components/About';
 import Services from './components/Services';
 import Portfolio from './components/Portfolio';
 import BusinessCards from './components/BusinessCards';
+import Banners from './components/Banners';
 import WhyChooseUs from './components/WhyChooseUs';
 import Pricing from './components/Pricing';
 import InstaTestimonials from './components/InstaTestimonials';
@@ -166,6 +167,9 @@ export default function App() {
 
           {/* 7. BUSINESS CARD PERSPECTIVES SHOWCASE */}
           <BusinessCards onQuoteTrigger={() => handleServiceSelect('Custom Business Card')} />
+
+          {/* 7.5. EXQUISITE BANNER & SIGNAGE DELIVERABLES */}
+          <Banners onQuoteTrigger={handleServiceSelect} />
 
           {/* 8. CLIENT WORK TIMELINE & ADVANTAGES */}
           <WhyChooseUs />
